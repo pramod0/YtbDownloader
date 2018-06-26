@@ -485,7 +485,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -624,8 +624,8 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
       <property name="geometry">
        <rect>
         <x>120</x>
-        <y>100</y>
-        <width>181</width>
+        <y>90</y>
+        <width>341</width>
         <height>31</height>
        </rect>
       </property>
@@ -633,27 +633,14 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
      <widget class="QPushButton" name="pushButton_3">
       <property name="geometry">
        <rect>
-        <x>320</x>
-        <y>100</y>
+        <x>230</x>
+        <y>140</y>
         <width>121</width>
         <height>31</height>
        </rect>
       </property>
       <property name="text">
        <string>Download</string>
-      </property>
-     </widget>
-     <widget class="QProgressBar" name="progressBar_2">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>140</y>
-        <width>521</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="value">
-       <number>0</number>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_5">
@@ -675,7 +662,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
         <x>120</x>
         <y>10</y>
         <width>341</width>
-        <height>20</height>
+        <height>31</height>
        </rect>
       </property>
      </widget>
@@ -685,7 +672,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
         <x>120</x>
         <y>50</y>
         <width>341</width>
-        <height>20</height>
+        <height>31</height>
        </rect>
       </property>
      </widget>
@@ -736,34 +723,14 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
      <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>100</y>
+        <x>40</x>
+        <y>110</y>
         <width>47</width>
-        <height>13</height>
+        <height>21</height>
        </rect>
       </property>
       <property name="text">
-       <string>Quality</string>
-      </property>
-     </widget>
-     <widget class="QPlainTextEdit" name="plainTextEdit_3">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>10</y>
-        <width>441</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPlainTextEdit" name="plainTextEdit_4">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>50</y>
-        <width>361</width>
-        <height>31</height>
-       </rect>
+       <string>Playlist</string>
       </property>
      </widget>
      <widget class="QComboBox" name="comboBox_2">
@@ -771,8 +738,8 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
        <rect>
         <x>120</x>
         <y>100</y>
-        <width>221</width>
-        <height>22</height>
+        <width>341</width>
+        <height>31</height>
        </rect>
       </property>
      </widget>
@@ -792,8 +759,8 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
      <widget class="QPushButton" name="pushButton_6">
       <property name="geometry">
        <rect>
-        <x>350</x>
-        <y>100</y>
+        <x>220</x>
+        <y>150</y>
         <width>121</width>
         <height>31</height>
        </rect>
@@ -802,17 +769,37 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
        <string>Download</string>
       </property>
      </widget>
-     <widget class="QProgressBar" name="progressBar_3">
+     <widget class="QLineEdit" name="lineEdit_5">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>140</y>
-        <width>521</width>
-        <height>23</height>
+        <x>120</x>
+        <y>20</y>
+        <width>341</width>
+        <height>31</height>
        </rect>
       </property>
-      <property name="value">
-       <number>0</number>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_6">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>60</y>
+        <width>341</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_8">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>10</y>
+        <width>75</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Search</string>
       </property>
      </widget>
     </widget>

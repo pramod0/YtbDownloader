@@ -36,7 +36,10 @@ class MainApp(QMainWindow, FORM_CLASS):
         self.pushButton.clicked.connect(self.handle_browse)
         self.pushButton_7.clicked.connect(self.get_ytb_video)
         self.pushButton_3.clicked.connect(self.download_ytb_video)
+        self.pushButton_4.clicked.connect(self.handle_browse3)
         self.pushButton_5.clicked.connect(self.handle_browse2)
+        self.pushButton_8.clicked.connect(self.get_pl)
+        self.pushButton_6.clicked.connect(self.download_pl)
 
     def handle_browse(self):
         save_place = QFileDialog.getSaveFileName(self, caption="Save As", directory=".", filter="All Files (*.*)")
@@ -50,6 +53,11 @@ class MainApp(QMainWindow, FORM_CLASS):
         path = str(save_location)
         #loc = path.split("'")[1]
         self.lineEdit_4.setText(path)
+
+    def handle_browse3(self):
+        save_location = QFileDialog.getExistingDirectory(self, "Select folder")
+        path = str(save_location)
+        self.lineEdit_6.setText(path)
 
     def handle_progress(self, copied, totalsize):
 
@@ -98,16 +106,41 @@ class MainApp(QMainWindow, FORM_CLASS):
     def download_ytb_video(self):
         video_link = self.lineEdit_3.text()
         w = pafy.new(video_link, ydl_opts="-v --no-check-certificate")
-        stream = w.videostreams
+        stream = w.streams
         save_location = self.lineEdit_4.text()
 
         quality = self.comboBox.currentIndex()
         down =stream[quality].download(filepath=save_location)
         QMessageBox.information(self, "Download Complete", "The download finished")
-        # self.progressBar.setvalue(0)
-        # self.lineEdit.setText('')
-        # self.lineEdit_2.setText('')
+        self.lineEdit_3.setText('')
+        self.lineEdit_4.setText('')
 
+    def get_pl(self):
+        pl_link = self.lineEdit_5.text()
+
+
+    def download_pl(self):
+        pl_link = self.lineEdit_5.text()
+        save_location = self.lineEdit_6.text()
+        pl = pafy.get_playlist(pl_link)
+        videos = pl['items']
+
+        os.chdir(save_location)
+        if os.path.exists(str(pl['title'])):
+            os.chdir(str(pl['title']))
+        else:
+            os.mkdir(str(pl['title']))
+            os.chdir(str(pl['title']))
+
+        for video in videos:
+            p = video['pafy']
+            best_url = p.getbest(preftype='mp4').url
+            print(best_url)
+            #best.download
+
+        QMessageBox.information(self, "Download Complete", "The download finished")
+        self.lineEdit_5.setText('')
+        self.lineEdit_6.setText('')
 
 def main():
     app = QApplication(sys.argv)
